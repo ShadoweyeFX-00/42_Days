@@ -6,7 +6,7 @@
 /*   By: momakhkh <momakhkh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/28 04:43:45 by momakhkh          #+#    #+#             */
-/*   Updated: 2025/07/28 05:32:53 by momakhkh         ###   ########.fr       */
+/*   Updated: 2025/08/02 17:26:40 by momakhkh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,3 @@ char	*ft_strcapitalize(char *str)
 	}
 	return (str);
 }
-/*
-int main ()
-{
-	char	str[] = "hi, how are you? 42words forty-two; fifty+and+one";
-	printf("%s \n",ft_strcapitalize(str));
-	return 0;
-}*/

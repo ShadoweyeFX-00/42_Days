@@ -1,32 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_is_prime.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: momakhkh <momakhkh@student.42.fr>          +#+  +:+       +#+        */
+/*   By: momakhkh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/28 19:53:39 by momakhkh          #+#    #+#             */
-/*   Updated: 2025/08/03 08:26:37 by momakhkh         ###   ########.fr       */
+/*   Created: 2025/08/04 17:13:51 by momakhkh          #+#    #+#             */
+/*   Updated: 2025/08/04 18:18:49 by momakhkh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-int	ft_strcmp(char*s1, char*s2)
+int	ft_is_prime(int nb)
 {
-	unsigned int	x;
+	int	i;
 
-	x = 0;
-	while (s1[x] && s2[x] && s1[x] == s2[x])
+	i = 2;
+	while (i <= nb / 2)
 	{
-		x++;
+		if (nb % i == 0)
+			return (0);
+		i++;
 	}
-	return (s1[x] - s2[x]);
+	if (nb <= 1)
+		return (0);
+	return (1);
 }
 /*
-int main ()
+int main(void)
 {
-	char str[] = "";
-
-	printf("%d\n", ft_strcmp("ShadoweyeFX", "ShadoweyeFX"));
+    int number = 13;
+    printf("ft_is_prime(%d) = %d\n", number, ft_is_prime(number));
+    return 0;
 }*/

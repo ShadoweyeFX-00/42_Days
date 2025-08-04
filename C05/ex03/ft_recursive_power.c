@@ -1,32 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_recursive_power.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: momakhkh <momakhkh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/28 19:53:39 by momakhkh          #+#    #+#             */
-/*   Updated: 2025/08/03 08:26:37 by momakhkh         ###   ########.fr       */
+/*   Created: 2025/08/04 16:25:59 by momakhkh          #+#    #+#             */
+/*   Updated: 2025/08/04 18:15:19 by momakhkh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-int	ft_strcmp(char*s1, char*s2)
+int	ft_recursive_power(int nb, int power)
 {
-	unsigned int	x;
-
-	x = 0;
-	while (s1[x] && s2[x] && s1[x] == s2[x])
-	{
-		x++;
-	}
-	return (s1[x] - s2[x]);
+	if (power > 0)
+		return (nb * ft_recursive_power(nb, power - 1));
+	else if (!power)
+		return (1);
+	return (0);
 }
 /*
 int main ()
 {
-	char str[] = "";
-
-	printf("%d\n", ft_strcmp("ShadoweyeFX", "ShadoweyeFX"));
+	printf("%d\n", ft_recursive_power(3, 7));
 }*/

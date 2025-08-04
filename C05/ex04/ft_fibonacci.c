@@ -1,32 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_fibonacci.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: momakhkh <momakhkh@student.42.fr>          +#+  +:+       +#+        */
+/*   By: momakhkh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/28 19:53:39 by momakhkh          #+#    #+#             */
-/*   Updated: 2025/08/03 08:26:37 by momakhkh         ###   ########.fr       */
+/*   Created: 2025/08/04 17:15:35 by momakhkh          #+#    #+#             */
+/*   Updated: 2025/08/04 18:16:16 by momakhkh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-int	ft_strcmp(char*s1, char*s2)
+int	ft_fibonacci(int index)
 {
-	unsigned int	x;
-
-	x = 0;
-	while (s1[x] && s2[x] && s1[x] == s2[x])
-	{
-		x++;
-	}
-	return (s1[x] - s2[x]);
+	if (index > 1)
+		return (ft_fibonacci(index - 1) + ft_fibonacci(index - 2));
+	else if (index == 1)
+		return (1);
+	else if (index == 0)
+		return (0);
+	return (-1);
 }
 /*
-int main ()
+int	main(void)
 {
-	char str[] = "";
-
-	printf("%d\n", ft_strcmp("ShadoweyeFX", "ShadoweyeFX"));
+	printf("%i", ft_fibonacci(7));
 }*/

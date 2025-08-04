@@ -1,32 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_recursive_factorial.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: momakhkh <momakhkh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/28 19:53:39 by momakhkh          #+#    #+#             */
-/*   Updated: 2025/08/03 08:26:37 by momakhkh         ###   ########.fr       */
+/*   Created: 2025/08/04 16:31:57 by momakhkh          #+#    #+#             */
+/*   Updated: 2025/08/04 18:09:12 by momakhkh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-int	ft_strcmp(char*s1, char*s2)
+int	ft_recursive_factorial(int nb)
 {
-	unsigned int	x;
-
-	x = 0;
-	while (s1[x] && s2[x] && s1[x] == s2[x])
-	{
-		x++;
-	}
-	return (s1[x] - s2[x]);
+	if (nb < 0)
+		return (0);
+	else if (nb > 1)
+		return (nb * ft_recursive_factorial(nb - 1));
+	return (1);
 }
 /*
-int main ()
+int	main(void)
 {
-	char str[] = "";
-
-	printf("%d\n", ft_strcmp("ShadoweyeFX", "ShadoweyeFX"));
+	printf("%i", ft_recursive_factorial(9));
 }*/

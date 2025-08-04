@@ -6,7 +6,7 @@
 /*   By: momakhkh <momakhkh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/28 04:42:42 by momakhkh          #+#    #+#             */
-/*   Updated: 2025/07/28 05:17:01 by momakhkh         ###   ########.fr       */
+/*   Updated: 2025/08/02 17:29:46 by momakhkh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_str_is_printable(char*str)
 	i = 0;
 	while (str[i])
 	{
-		if (str[i] < 32)
+		if (str[i] < 32 || str[i] > 126)
 			return (0);
 		i++;
 	}

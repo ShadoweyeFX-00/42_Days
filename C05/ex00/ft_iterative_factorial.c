@@ -1,32 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: momakhkh <momakhkh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/28 19:53:39 by momakhkh          #+#    #+#             */
-/*   Updated: 2025/08/03 08:26:37 by momakhkh         ###   ########.fr       */
+/*   Created: 2025/08/04 16:31:49 by momakhkh          #+#    #+#             */
+/*   Updated: 2025/08/04 17:59:01 by momakhkh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-int	ft_strcmp(char*s1, char*s2)
+int	ft_iterative_factorial(int nb)
 {
-	unsigned int	x;
+	int	result;
 
-	x = 0;
-	while (s1[x] && s2[x] && s1[x] == s2[x])
+	result = 1;
+	while (nb > 0)
 	{
-		x++;
+		result *= nb;
+		nb--;
 	}
-	return (s1[x] - s2[x]);
+	if (nb < 0)
+	{
+		return (0);
+	}
+	return (result);
 }
 /*
-int main ()
+int main(void)
 {
-	char str[] = "";
-
-	printf("%d\n", ft_strcmp("ShadoweyeFX", "ShadoweyeFX"));
+    printf("%i", ft_iterative_factorial(5));
 }*/

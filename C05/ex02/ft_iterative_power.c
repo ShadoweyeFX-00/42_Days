@@ -1,32 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_iterative_power.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: momakhkh <momakhkh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/28 19:53:39 by momakhkh          #+#    #+#             */
-/*   Updated: 2025/08/03 08:26:37 by momakhkh         ###   ########.fr       */
+/*   Created: 2025/08/04 16:32:04 by momakhkh          #+#    #+#             */
+/*   Updated: 2025/08/04 18:14:05 by momakhkh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-int	ft_strcmp(char*s1, char*s2)
+int	ft_iterative_power(int nb, int power)
 {
-	unsigned int	x;
+	int	pow;
 
-	x = 0;
-	while (s1[x] && s2[x] && s1[x] == s2[x])
+	pow = 1;
+	while (power > 0)
 	{
-		x++;
+		pow *= nb;
+		power--;
 	}
-	return (s1[x] - s2[x]);
+	if (!power)
+		return (pow);
+	return (0);
 }
 /*
 int main ()
 {
-	char str[] = "";
+	int base = 2;
+	int exponent  = 5;
+	int result = ft_iterative_power(base, exponent);
 
-	printf("%d\n", ft_strcmp("ShadoweyeFX", "ShadoweyeFX"));
+	printf("%d to the power of %d is %d\n", base, exponent, result);
 }*/
