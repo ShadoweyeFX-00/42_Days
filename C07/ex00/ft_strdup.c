@@ -1,42 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   fs.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: momakhkh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/05 21:27:52 by momakhkh          #+#    #+#             */
-/*   Updated: 2025/08/05 21:33:13 by momakhkh         ###   ########.fr       */
+/*   Created: 2025/08/05 10:54:48 by momakhkh          #+#    #+#             */
+/*   Updated: 2025/08/05 10:54:50 by momakhkh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdlib.h>
+#include <stdio.h>
 
-void	ft_putchar(char c)
+char	*ft_strdup(char *src)
 {
-	write(1, &c, 1);
+	int	x;
+	       
+	x = 0;
+	while (src[x])
+        x++;
+	char *dest = malloc(x + 1);
+	if (!dest)
+		return NULL;
+	
+	int y;
+	
+	y = 0;
+	while (y <= x)
+	{
+		dest[y] = src[y];
+		y++;
+	}
+	return dest;
 }
 
-void	ft_putnbr(int nb)
+int main(void)
 {
-	unsigned int	nbr;
-
-	if (nb < 0)
-	{
-		ft_putchar('-');
-		nb *= -1;
-		nbr = nb;
-	}
-	nbr = nb;
-	if (nbr > 9)
-	{
-		ft_putnbr(nbr / 10);
-	}
-	ft_putchar(nbr % 10 + '0');
+	char *s = ft_strdup("Shadow");
+	printf("%s\n", s);
+	free(s);
 }
-/*
-int main ()
-{
-	ft_putnbr(-2147483648);
-	ft_putchar('\n');
-}*/

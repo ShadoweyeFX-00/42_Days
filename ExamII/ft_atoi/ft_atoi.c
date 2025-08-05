@@ -19,5 +19,5 @@ int	ft_atoi(char *str)
 
 int main ()
 {
-	printf("%d\n", ft_atoi("        ------21331jkhf"));
+	printf("%d\n", ft_atoi("        -21631jkhf"));
 }
